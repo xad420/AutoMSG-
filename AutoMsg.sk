@@ -1,0 +1,102 @@
+options:
+
+    msg2:§b§lZE§3HC.PL &8» &7WITAMY NA &3ZE§bHC.PL
+    msg1:§b§lZE§3HC.PL &8» &7
+    msg3:§b§lZE§3HC.PL &8» &7
+    msg4:§b§lZE§3HC.PL &8» &7NASZA MAPA JEST 2000X2000 
+    msg5:§b§lZE§3HC.PL &8» &7POTRZEBUJESZ POMOCY WPISZ &3&l/pomoc
+    msg6:§b§lZE§3HC.PL &8» &7ZMIEN W CONFIGU
+    msg7:§b§lZE§3HC.PL &8» &7ZMIEN W CONFIGU
+    msg8:§b§lZE§3HC.PL &8» &7ZMIEN W CONFIGU
+    czas: 100
+
+every {@czas} real seconds:
+    {auto.spam} is not set:
+        set {auto.spam} to 1
+        stop
+    {auto.spam} is 1:
+        broadcast "{@msg1}"
+        loop all players:
+            play raw sound "note.hat" at loop-player with pitch 1 volume 2
+        set {auto.spam} to 2
+        stop
+    {auto.spam} is 2:
+        broadcast "{@msg2}"
+        loop all players:
+            play raw sound "note.hat" at loop-player with pitch 1 volume 2
+        set {auto.spam} to 3
+        stop
+    {auto.spam} is 3:
+        broadcast "{@msg3}"
+        loop all players:
+            play raw sound "note.hat" at loop-player with pitch 1 volume 2
+        set {auto.spam} to 4
+        stop
+    {auto.spam} is 4:
+        broadcast "{@msg4}"
+        loop all players:
+            play raw sound "note.hat" at loop-player with pitch 1 volume 2
+        set {auto.spam} to 5
+        stop
+    {auto.spam} is 5:
+        broadcast "{@msg5}"
+        loop all players:
+            play raw sound "note.hat" at loop-player with pitch 1 volume 2
+        set {auto.spam} to 6
+        stop
+    {auto.spam} is 6:
+        broadcast "{@msg6}"
+        loop all players:
+            play raw sound "note.hat" at loop-player with pitch 1 volume 2
+        set {auto.spam} to 8
+        stop
+    {auto.spam} is 7:
+        broadcast "{@msg7}"
+        loop all players:
+            play raw sound "note.hat" at loop-player with pitch 1 volume 2
+        set {auto.spam} to 7
+        stop
+    {auto.spam} is 8:
+        broadcast "{@msg8}"
+        loop all players:
+            play raw sound "note.hat" at loop-player with pitch 1 volume 2
+        set {auto.spam} to 1
+        stop
+		
+
+
+
+on rightclick on lever:
+    if {red.%player%} is not set:
+        set {red.%player%} to true
+        set {czasrr.%player%} to 5
+        loop 5 times:
+            wait 1 second
+            remove 1 from {czasrr.%player%}
+        delete {red.%player%}
+    if {red.%player%} is true:
+        cancel event
+        send "&4&lBlad: &cAnty lagowanie serwera dzwignia!"
+		
+options:
+
+    msg2:§bZEHC.PL &8» &7Milej gry zyczy &fadministracja serwera
+    msg1:§bZEHC.PL&8» &7Edycja trwa tyle ile &fgracie!
+    czas: 25
+
+every {@czas} real seconds:
+    {auto.spam} is not set:
+        set {auto.spam} to 1
+        stop
+    {auto.spam} is 1:
+        broadcast "{@msg1}"
+        loop all players:
+            play raw sound "note.hat" at loop-player with pitch 1 volume 3
+        set {auto.spam} to 2
+        stop
+    {auto.spam} is 2:
+        broadcast "{@msg2}"
+        loop all players:
+            play raw sound "note.hat" at loop-player with pitch 1 volume 3
+        set {auto.spam} to 1
+        stop		
